@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Specs - DIGIMAG</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F2F2F2;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #F2F2F2;
+    }
+
+    .logo img {
+      width: 190px;
+      height: 160px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      width: 170px;
+      text-align: center;
+      height: 40px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .search-container input[type="search"] {
+      width: 600px;
+      height: 30px;
+      padding: 5px;
+    }
+
+    .search-container button {
+      height: 30px;
+      padding: 0 15px;
+    }
+
+    .job-specs {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px;
+      gap: 20px;
+    }
+
+    .side-box {
+      width: 25%;
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .middle-rectangles {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .rectangle {
+      background-color: #66CCFF;
+      padding: 20px;
+      border-radius: 10px;
+      height: 200px;
+      overflow-y: auto;
+    }
+
+    .rectangle img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+    }
+
+    .rectangle h3,
+    .side-box h3 {
+      margin-top: 0;
+    }
+
+    .apply-button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .footer {
+      text-align: center;
+      margin: 40px 0 20px 0;
+      color: #333;
+    }
+
+    @media (max-width: 1024px) {
+      .job-specs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .side-box,
+      .middle-rectangles {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="jobs.html">Job Specs</a>
+      <a href="Profile.html">Sign Up</a>
+    </div>
+    <div class="logo">
+      <img src="LOGO.PNG" alt="DIGIMAG Logo">
+    </div>
+  </div>
+
+  <div class="search-container">
+    <form action="search.html" method="get">
+      <input type="search" name="query" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="job-specs">
+    <!-- Left box: Web Developer -->
+    <div class="side-box">
+      <div>
+        <h3>🔹 Web Developer</h3>
+        <p><strong>Responsibilities:</strong></p>
+        <ul>
+          <li>Build and maintain responsive websites and web apps.</li>
+          <li>Collaborate with designers to implement UI/UX designs.</li>
+          <li>Optimize applications for maximum speed and scalability.</li>
+        </ul>
+        <p><strong>Skills Required:</strong></p>
+        <ul>
+          <li>HTML, CSS, JavaScript, React</li>
+          <li>API integration & Git version control</li>
+          <li>Responsive and cross-browser design</li>
+        </ul>
+        <p><strong>Experience:</strong> 1-3 years in front-end development.</p>
+        <p><strong>Salary:</strong> £28,000 - £35,000 annually</p>
+      </div>
+      <button class="apply-button">Apply Now</button>
+    </div>
+
+    <!-- Middle rectangles -->
+    <div class="middle-rectangles">
+      <!-- Opportunities box -->
+      <div class="rectangle">
+        <h3>🌟 Opportunities at DIGIMAG</h3>
+        <ul>
+          <li>Career growth through structured development paths</li>
+          <li>Remote and hybrid work flexibility</li>
+          <li>Annual tech training budget</li>
+          <li>In-house mentorship from industry professionals</li>
+          <li>Performance-based promotions and salary reviews</li>
+          <li>Creative freedom and leadership in innovation projects</li>
+        </ul>
+      </div>
+
+      <!-- Image box -->
+      <div class="rectangle">
+        <img src="https://builtin.com/sites/www.builtin.com/files/2024-05/companies%20hiring%20developers.png" alt="Companies Hiring Developers">
+      </div>
+    </div>
+
+    <!-- Right box: Digital Marketing -->
+    <div class="side-box">
+      <div>
+        <h3>🔹 Digital Marketing Specialist</h3>
+        <p><strong>Responsibilities:</strong></p>
+        <ul>
+          <li>Develop SEO/SEM strategies to increase web traffic.</li>
+          <li>Plan and execute campaigns across Google & social media.</li>
+          <li>Generate reports and optimize conversion performance.</li>
+        </ul>
+        <p><strong>Skills Required:</strong></p>
+        <ul>
+          <li>SEO tools (Ahrefs, SEMrush), Google Ads</li>
+          <li>Google Analytics & keyword research</li>
+          <li>Excellent content writing and copy skills</li>
+        </ul>
+        <p><strong>Experience:</strong> 2+ years in digital marketing.</p>
+        <p><strong>Salary:</strong> £26,000 - £33,000 annually</p>
+      </div>
+      <button class="apply-button">Apply Now</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Telephone Number: 01924 563189</p>
+    <p>Email: digimag@gmail.com</p>
+  </div>
+
+</body>
+</html>

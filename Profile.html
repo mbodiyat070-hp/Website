@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile- DIGIMAG</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #F2F2F2;
+    }
+
+    .logo img {
+      width: 190px;
+      height: 160px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      width: 170px;
+      text-align: center;
+      height: 40px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .search-container form {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-container input[type="search"] {
+      width: 600px;
+      height: 30px;
+      padding: 5px;
+      font-size: 14px;
+    }
+
+    .search-container button {
+      height: 30px;
+      padding: 0 10px;
+      font-size: 14px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #218838;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .search-container input[type="search"] {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Navigation -->
+  <div class="header">
+    <div class="nav-links">
+      <a href="Home Page.html">Home page</a>
+      <a href="Products.html">Products</a>
+      <a href="Job spec.html">Job Specs</a>
+      <a href="Profile.html">Profile</a>
+    </div>
+    <div class="logo">
+      <img src="LOGO.PNG" alt="DIGIMAG Logo">
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <form action="search.html" method="get">
+      <input type="search" name="query" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <!-- Sign Up Form -->
+  <div class="container">
+    <h2>Create an Account</h2>
+    <form action="welcome.html" method="post" id="signupForm">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+
+    <a href="Home Page.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <!-- JavaScript Validation -->
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      let errors = [];
+
+      if (!firstName || !lastName || !email || !password || !confirmPassword) {
+        errors.push("All fields must be filled out.");
+      }
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        errors.push("Please enter a valid email address.");
+      }
+
+      if (password.length < 6) {
+        errors.push("Password must be at least 6 characters long.");
+      }
+
+      if (password !== confirmPassword) {
+        errors.push("Passwords do not match.");
+      }
+
+      if (errors.length > 0) {
+        e.preventDefault();
+        alert(errors.join("\n"));
+      }
+    });
+  </script>
+</body>
+</html>
